@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style1.css">
+</head>
+<body style="background: linear-gradient(to right, rgb(234, 109, 109), rgb(236, 188, 14)); height: 100vh;">
+    <div class="container">
+        <div class="form-box">
+            <!--Avatat image-->
+            <img class="avatar" src="/images/avatar.webp" alt="Avatar">
+            <h2 id="formTitle">LOGIN</h2>
+            <form id="loginForm" onsubmit="return loginUser()">
+                <input class="field" type="text" id="loginUsername" placeholder="Username" required />
+                <input class="field" type="password" id="loginPassword" placeholder="Password" required />
+                <label class="label1"><input type="checkbox" />Remember me</label>
+                <button id="formbtn" type="submit">LOGIN</button>
+                <p class="p1">New User? <a class="a1" href="register.html">SIGN UP</a></p>
+                <p class="p1"><a class="a1" href="#">Forgot Username / Password?</a></p>
+                <p id="message"></p>
+
+                <script src="/javascript/auth.js"></script>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

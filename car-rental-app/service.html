@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="/css/style1.css">
+</head>
+
+<body onload="loadRentalRecords();">
+    <header>
+        <h1><a href="home.html">DRIVOXE.</a></h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="#">Cars</a>
+            <a href="#">Prices</a>
+            <a href="#">About</a>
+        </nav>
+        <!-- <div>
+            <a href="#" style="margin-right: 15px; color: #111;">Contact</a>
+            <button class="btn" onclick="register.html">Sign Up</button>
+        </div> -->
+    </header>
+
+    <main class="main-content">
+        <div class="content-container">
+        <div class="toolbar">
+            <input class="searchField" type="text" id="searchInput" placeholder="Enter Rental ID to Search">
+            <button class="sbtn" onclick="searchRecord()">🔍</button>
+            <button class="sbtn" onclick="loadRentalRecords()">🔄</button>
+            <button class="sbtn" onclick="openAddModal()">➕</button>
+        </div>
+        <table id="rentalTable">
+            <thead>
+                <tr>
+                    <th>Rental ID</th>
+                    <th>Car Modal</th>
+                    <th>MFD Year</th>
+                    <th>Fuel</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Customer</th>
+                    <th>Destination</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="rentalTableBody">
+                <tr><td colspan="9">No Records found</td></tr>
+            </tbody>
+        </table>
+    </div>
+    </main>
+
+    <!-- Model(popups will built here) -->
+     <div id="modalContainer"></div>
+
+     <script src="/javascript/service.js"></script>
+
+</body>
+</html>
