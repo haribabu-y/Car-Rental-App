@@ -32,15 +32,17 @@ function renderReservations() {
 
     container.innerHTML = "";
     records.forEach(rec => {
+        var staticimg = "/images/carimg"+(Math.floor(Math.random()*10)+1)+".jpg";
+        console.log(staticimg);
         const card = document.createElement("div");
         card.className = "reservation-card";
         card.innerHTML = `
-             <img src="/images/carimg9.jpg" alt="car image">
+             <img src="${staticimg}" alt="car image">
              <h3>${rec.carModal}</h3>
              <p><strong>Rental ID:</strong> ${rec.rentalId}</p>
              <p><strong>Customer:</strong> ${rec.customer}</p>
-             <p><strong>From:</strong> ${rec.startDate}</p>
-             <p><strong>To:</strong> ${rec.endDate}</p>
+             <p><strong>Start Date:</strong> ${rec.startDate}</p>
+             <p><strong>Ens Date:</strong> ${rec.endDate}</p>
              <p><strong>Destination:</strong> ${rec.destination}</p>
         `;
         if(user.toLowerCase() == "admin") {

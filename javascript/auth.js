@@ -6,9 +6,14 @@ function registerUser() {
     const confirmPassword = document.getElementById("regConfirmPassword").value;
     let msg = document.getElementById("message");
 
-    //password match check
+    //checking if the password and confirmpassword arw matching
     if(password !== confirmPassword) {
+        // if not match throwing an error message
         msg.textContent = "Password do not match!";
+        console.log("Password and confirm password are not matching");
+        // reseting the password fields
+        document.getElementById("regPassword").value = "";
+        document.getElementById("regConfirmPassword").value = "";
         return false;
     }
 
@@ -23,7 +28,7 @@ function registerUser() {
         msg.textContent = "User already exists. Please login.";
         setTimeout(() => {
             window.location.href = "index.html";
-        }, 3000)
+        }, 2000)
         return false;
     }
 
@@ -47,7 +52,6 @@ function registerUser() {
     document.getElementById("registerForm").reset();
 
     return false; // prevent actual form submission
-
     
 }
 
@@ -75,6 +79,7 @@ function loginUser() {
         msg.textContent = "Login successfull!";
 
         // storing the logged user info in local storage
+        // localStorage.setItem("loggedInUser", JSON.stringify(username));
         localStorage.setItem("loggedInUser", username);
 
         // redirecring to the home page or dashboard

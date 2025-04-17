@@ -5,53 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="/css/style1.css">
+
 </head>
 <body style="background-color: #fff; color: #111;">
     <header>
         <h1><a href="home.html">DRIVOXE.</a></h1>
         <nav>
             <a href="service.html">Service</a>
-            <a href="reservation.html">Cars</a>
+            <a href="reservation.html">Reservation</a>
             <a href="#">Prices</a>
             <a href="#">About</a>
         </nav>
         <div>
-            <a href="#" style="margin-right: 15px; color: #111;">Contact</a>
-            <button class="btn" onclick="goRegistration()">Sign Up</button>
+            <a href="#" style="margin-right: 15px; color: red;">Contact <span style="margin-left: 10px;">|</span></a>
+            <p style="display: inline;"><button class="btn" onclick="goRegistration()">Sign Up</button></p>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-left">
-            <h2>Your Journey,<br> Your Car,<br> Your Way</h2>
-            <p>Experience the ultimate freedom of choice with GoCar - tailor your adventure by choosing from our premium fleet of vehicles.</p>
-            <button class="btn">Get Started</button>
+<section class="hero">
+    <div class="hero-left">
+      <h1>Your Journey,<br>Your Car,<br>Your Way</h1>
+      <p>Experience the ultimate freedom of choice with GoCar - tailor your adventure by choosing from our premium fleet of vehicles.</p>
+      <button class="btn">Get Started</button>
+    </div>
+    <div class="hero-center">
+        <img src="/images/car-background-image3.png" alt="Background car" width="400px" height="400px">
+        <div class="status-card">
+            <h3>50+</h3>
+            <p>Car Types<br>Available</p>
         </div>
-        <div class="hero-right">
-            <div class="hero-right-top">
-                <div class="status-card">
-                    <h3>50+</h3>
-                    <p>Car Types<br> Available</p>
-                </div>
-                <div class="user-info">
-                    <img class="users" src="/images/user1.jpg" alt="user1">
-                    <img class="users" src="/images/user2.png" alt="user2">
-                    <img class="users" src="/images/user3.jpg" alt="user3">
-                    <p>12.5K+ People<br>used our services</p>
-                </div>
-            </div>
-            <div class="hero-buttons">
-                <button class="btn-hero">Rent</button>
-                <button class="btn-hero">Buy</button>
-                <button class="btn-hero">Sell</button>
-                <button class="btn-hero">Consult</button>
-            </div>
-            <a href="#" class="learn-link">Learn more →</a>    
+    </div>
+    <div class="hero-right">
+      
+      <div class="user-info">
+        <div>
+            <img class="users" src="/images/user1.jpg" alt="user1">
+            <img class="users" src="/images/user2.png" alt="user2">
+            <img class="users" src="/images/user3.jpg" alt="user3">
         </div>
-        <!-- <div class="hero-img">
-            <img src="/images/cars-background-image2.png" alt="Background car">
-        </div> -->
-    </section>
+        <p><strong>12.5K+ People</strong><br>used our services</p>
+    </div>
+      <div class="hero-buttons">
+        <button class="btn-hero">Rent</button>
+        <button class="btn-hero">Buy</button>
+        <button class="btn-hero">Sell</button>
+        <button class="btn-hero">Consult</button>
+      </div>
+      <a href="#" class="learn-link">Learn more →</a>
+    </div>
+    
+  </section>
+  <div class="logoipsum">
+    <img src="/images/logoipsum/logoipsum1.png" alt="Logo1">
+    <img src="/images/logoipsum/logoipsum1.png" alt="Logo2">
+    <img src="/images/logoipsum/logoipsum1.png" alt="Logo3">
+    <img src="/images/logoipsum/logoipsum1.png" alt="Logo4">
+    <img src="/images/logoipsum/logoipsum1.png" alt="Logo5">
+    <img src="/images/logoipsum/logoipsum1.png" alt="Logo6">
+</div>
+
+<!-- -------------------------------------------------- -->
+
 
     <section class="fleet">
         <p>THE CARS</p>
@@ -60,50 +74,74 @@
             <div class="car-card">
                 <img src="/images/carimg1.jpg" alt="Car Image 1">
                 <h4>Horizon Mirage Convertible</h4>
-                <p>Starting at <span>$49/day</span></p>
-                <button class="btn">Rent</button>
+                <div>
+                    <p>Starting at <span>$49/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
             </div>
             <div class="car-card">
                 <img src="/images/carimg2.jpg" alt="Car Image 1">
-                <h4>Horizon Mirage Convertible</h4>
-                <p>Starting at <span>$79/day</span></p>
-                <button class="btn">Rent</button>
+                <h4>Zephyr A4C-Class Stratos</h4>
+                <div>
+                    <p>Starting at <span>$79/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
             </div>
             <div class="car-card">
                 <img src="/images/carimg3.jpg" alt="Car Image 1">
-                <h4>Horizon Mirage Convertible</h4>
-                <p>Starting at <span>$99/day</span></p>
-                <button class="btn">Rent</button>
+                <h4>Aurora X5-Prime Nebula</h4>
+                <div>
+                    <p>Starting at <span>$99/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
             </div>
             <div class="car-card">
                 <img src="/images/carimg4.jpg" alt="Car Image 1">
-                <h4>Horizon Mirage Convertible</h4>
-                <p>Starting at <span>$59/day</span></p>
-                <button class="btn">Rent</button>
+                <h4>Vanguard CX2 Convertible</h4>
+                <div>
+                    <p>Starting at <span>$59/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
             </div>
             <div class="car-card">
                 <img src="/images/carimg5.jpg" alt="Car Image 1">
                 <h4>Horizon Mirage Convertible</h4>
-                <p>Starting at <span>$39/day</span></p>
-                <button class="btn">Rent</button>
+                <div>
+                    <p>Starting at <span>$39/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
             </div>
             <div class="car-card">
                 <img src="/images/carimg6.jpg" alt="Car Image 1">
-                <h4>Horizon Mirage Convertible</h4>
-                <p>Starting at <span>$69/day</span></p>
-                <button class="btn">Rent</button>
+                <h4>Stellar AX3 Orion Hybrid</h2>
+                <div>
+                    <p>Starting at <span>$69/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
             </div>
             <div class="car-card">
                 <img src="/images/carimg7.jpg" alt="Car Image 1">
                 <h4>Horizon Mirage Convertible</h4>
-                <p>Starting at <span>$89/day</span></p>
-                <button class="btn">Rent</button>
+                <div>
+                    <p>Starting at <span>$89/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
             </div>
             <div class="car-card">
                 <img src="/images/carimg8.jpg" alt="Car Image 1">
+                <h4>Vangurand C-Class Cuope</h4>
+                <div>
+                    <p>Starting at <span>$59/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="/images/carimg9.jpg" alt="Car Image 1">
                 <h4>Horizon Mirage Convertible</h4>
-                <p>Starting at <span>$59/day</span></p>
-                <button class="btn">Rent</button>
+                <div>
+                    <p>Starting at <span>$79/day</span></p>
+                    <button class="btn">Rent</button>
+                </div>
             </div>
         </div>
     </section>
