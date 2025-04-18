@@ -15,6 +15,7 @@ function closeModal() {
 }
 
 function openAddModal() {
+  document.getElementById("searchInput").value = "";
     const html = `
     <h2>Add Rental Record</h2>
     <input type="text" id="rentalId" placeholder="Rental ID *">
@@ -127,10 +128,10 @@ function loadRentalRecords() {
         <td>${rec.endDate}</td>
         <td>${rec.customer}</td>
         <td>${rec.destination}</td>
-        <td>
-          <button class="seebtn" onclick='openViewModal(${JSON.stringify(rec)})'>See</button>
+        <td class="actionbtns">
+          <button class="seebtn" onclick='openViewModal(${JSON.stringify(rec)})'>View</button>
           <button class="editbtn" onclick='openEditModal(${JSON.stringify(rec)})'>Edit</button>
-          <button class="deletebtn" onclick='openDeleteModal("${rec.rentalId}")'>Delete</button>
+          <button class="deletebtn" onclick='openDeleteModal("${rec.rentalId}")'>Del</button>
         </td>
       `;
       tableBody.appendChild(row);
@@ -222,10 +223,10 @@ function searchRecord() {
         <td>${rec.endDate}</td>
         <td>${rec.customer}</td>
         <td>${rec.destination}</td>
-        <td>
-          <button class="seebtn" onclick='openViewModal(${JSON.stringify(rec)})'>See</button>
+        <td class="actionbtns">
+          <button class="seebtn" onclick='openViewModal(${JSON.stringify(rec)})'>View</button>
           <button class="editbtn" onclick='openEditModal(${JSON.stringify(rec)})'>Eidt</button>
-          <button class="deletebtn" onclick='openDeleteModal("${rec.rentalId}")'>Delete</button>
+          <button class="deletebtn" onclick='openDeleteModal("${rec.rentalId}")'>Del</button>
         </td>
       `;
       tableBody.appendChild(row);

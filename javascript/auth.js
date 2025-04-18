@@ -17,7 +17,7 @@ function registerUser() {
         return false;
     }
 
-    // Getting existing user if exist
+    // Getting existing user if exist or else creating an new localstorage
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
     // Checking for existing username or email
@@ -51,8 +51,8 @@ function registerUser() {
     //Clearing form fields 
     document.getElementById("registerForm").reset();
 
-    return false; // prevent actual form submission
-    
+    return false; 
+
 }
 
 function loginUser() {
@@ -93,5 +93,5 @@ function loginUser() {
     //Clearing form fields 
     document.getElementById("loginForm").reset();
 
-    return false; // prevent form submission
+    return false;
 }

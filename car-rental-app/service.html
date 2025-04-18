@@ -30,24 +30,26 @@
             <button class="sbtn" onclick="loadRentalRecords()">🔄</button>
             <button class="sbtn" onclick="openAddModal()">➕</button>
         </div>
-        <table id="rentalTable">
-            <thead>
-                <tr>
-                    <th>Rental ID</th>
-                    <th>Car Modal</th>
-                    <th>MFD Year</th>
-                    <th>Fuel</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Customer</th>
-                    <th>Destination</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="rentalTableBody">
-                <tr><td colspan="9">No Records found</td></tr>
-            </tbody>
-        </table>
+        <div class="rentalTable">
+            <table id="rentalTable">
+                <thead>
+                    <tr>
+                        <th>Rental ID</th>
+                        <th>Car Modal</th>
+                        <th>MFD Year</th>
+                        <th>Fuel</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Customer</th>
+                        <th>Destination</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="rentalTableBody">
+                    <tr><td colspan="9">No Records found</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     </main>
 

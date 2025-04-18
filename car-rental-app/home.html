@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style1.css">
 
 </head>
-<body style="background-color: #fff; color: #111;">
+<body style="background-color: #fff; color: #111;" onload="showUsername()">
     <header>
         <h1><a href="home.html">DRIVOXE.</a></h1>
         <nav>
@@ -21,6 +21,8 @@
             <p style="display: inline;"><button class="btn" onclick="goRegistration()">Sign Up</button></p>
         </div>
     </header>
+
+    <div class="welcome">Welcome, <span id="username">User</span>!</div>
 
 <section class="hero">
     <div class="hero-left">
@@ -173,6 +175,10 @@
     <script>
         function goRegistration() {
             window.location.href = "register.html"
+        }
+        function showUsername() {
+            const user = localStorage.getItem("loggedInUser");
+            document.getElementById("username").textContent = user || "Guest";
         }
     </script>
 </body>

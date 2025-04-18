@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/css/style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <!--  onsubmit="return loginUser()" 
   linear-gradient(to right, rgb(234, 109, 109), rgb(236, 188, 14))-->
@@ -17,12 +19,14 @@
             <!--Avatat image-->
             <h2 id="formTitle" style="margin-top: 30px;">LOGIN</h2>
             <form id="loginForm" onsubmit="return loginUser()">
-                <!-- <div class="input-group">
-                    <i style=" display: grid;place-items: center;" class="icon"><img width="15px" height="15px" src="/images/icons/user.png" alt=""></i>
-                    <input type="text" placeholder="Username" />
-                </div> -->
-                <input class="field" type="text" id="loginUsername" placeholder=" Username" required />
-                <input class="field" type="password" id="loginPassword" placeholder="Password" required />
+                  <div class="input-group">
+                    <i class="icon fa-solid fa-user"></i>
+                    <input class="field" type="text" id="loginUsername" placeholder=" Username" required />
+                </div>
+                <div class="input-group">
+                    <i class="icon fa-solid fa-lock"></i>
+                    <input class="field" type="password" id="loginPassword" placeholder="Password" required />
+                </div>
                 <label class="label1"><input type="checkbox" />Remember me</label>
                 <button id="formbtn" type="submit">LOGIN</button>
                 <p class="p1">New User? <a class="a1" href="register.html">SIGN UP</a></p>
