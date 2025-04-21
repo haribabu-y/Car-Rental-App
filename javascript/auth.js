@@ -10,7 +10,7 @@ function registerUser() {
     if(password !== confirmPassword) {
         // if not match throwing an error message
         msg.textContent = "Password do not match!";
-        console.log("Password and confirm password are not matching");
+        // console.log("Password and confirm password are not matching");
         // reseting the password fields
         document.getElementById("regPassword").value = "";
         document.getElementById("regConfirmPassword").value = "";
@@ -69,6 +69,8 @@ function loginUser() {
 
     //getting the user from the local storage
     const users = JSON.parse(localStorage.getItem("users")) || [];
+    // console.log(users);
+    
 
     // finding the user if exists with email or username and password
     const user = users.find(user => ((user.username === username || user.email === email) && user.password === password));
@@ -79,13 +81,13 @@ function loginUser() {
         msg.textContent = "Login successfull!";
 
         // storing the logged user info in local storage
-        // localStorage.setItem("loggedInUser", JSON.stringify(username));
         localStorage.setItem("loggedInUser", username);
 
         // redirecring to the home page or dashboard
         setTimeout(() => {
             window.location.href = "home.html";
         }, 1000);
+        
     } else {
         msg.textContent = "Invalid username or password";
     }

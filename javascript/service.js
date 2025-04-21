@@ -1,3 +1,4 @@
+// Creating the div element for popup
 function openModal(contentHtml) {
     const container = document.getElementById("modalContainer");
     container.innerHTML = `
@@ -10,10 +11,12 @@ function openModal(contentHtml) {
     `;
 }
 
+//adding function to close the popup
 function closeModal() {
     document.getElementById("modalContainer").innerHTML = "";
 }
 
+// Creating the popup for adding the new record
 function openAddModal() {
   document.getElementById("searchInput").value = "";
     const html = `
@@ -41,7 +44,9 @@ function openAddModal() {
     openModal(html);
 }
 
+//Creating the popup for editing the record
 function openEditModal(record) {
+  document.getElementById("searchInput").value = "";
     const html = `
       <h2>Edit Rental Record</h2>
       <input type="text" id="rentalId" value="${record.rentalId}" disabled>
@@ -54,8 +59,8 @@ function openEditModal(record) {
       <input type="date" id="startDate" value="${record.startDate}">
       <input type="date" id="endDate" value="${record.endDate}">
       <input type="text" id="customer" value="${record.customer}">
-      <input type="text" id="destination" value="${record.destination}">
       <input type="text" id="startPlace" value="${record.startPlace}">
+      <input type="text" id="destination" value="${record.destination}">
       <label><input type="checkbox" id="singlePassenger" ${record.singlePassenger ? "checked" : ""}> Single Passenger</label>
   
       <div class="modal-buttons">
@@ -66,8 +71,9 @@ function openEditModal(record) {
     openModal(html);
   }
 
-
+// creating the popup for viewing the existing record
 function openViewModal(record) {
+  document.getElementById("searchInput").value = "";
     const html = `
     <h2>View Rental record</h2>
     <p><strong>Rental ID:</strong> ${record.rentalId}</p>
@@ -77,8 +83,8 @@ function openViewModal(record) {
     <p><strong>Start Date:</strong> ${record.startDate}</p>
     <p><strong>End Date:</strong> ${record.endDate}</p>
     <p><strong>Customer:</strong> ${record.customer}</p>
-    <p><strong>Destination:</strong> ${record.destination}</p>
     <p><strong>Start Place:</strong> ${record.startPlace}</p>
+    <p><strong>Destination:</strong> ${record.destination}</p>
     <p><strong>Single Passenger:</strong> ${record.singlePassenger ? "Yes" : "No"}</p>
   
     <div class="modal-buttons">
@@ -88,7 +94,9 @@ function openViewModal(record) {
     openModal(html);
 }
 
+//Creating the popup for the delete method for confirming the deletion
 function openDeleteModal(id) {
+  document.getElementById("searchInput").value = "";
     const html = `
     <h3>Are you sure you want to delect this record!</h3>
     <div class="modal-buttons">
@@ -99,14 +107,17 @@ function openDeleteModal(id) {
     openModal(html);
 }
 
+// function to get data from the local storage
 function getRecords() {
     return JSON.parse(localStorage.getItem("rentalRecords") || "[]");
   }
 
-  function saveRecords(records) {
-    localStorage.setItem("rentalRecords", JSON.stringify(records));
-  }
+//function to save or update the record to the local storage
+function saveRecords(records) {
+  localStorage.setItem("rentalRecords", JSON.stringify(records));
+}
 
+// funnction to load the records from the local storage adding it in the table while loading the page
 function loadRentalRecords() {
     const tableBody = document.getElementById("rentalTableBody");
     const records = getRecords();
@@ -138,6 +149,7 @@ function loadRentalRecords() {
     });
 }
 
+// function to get values from the input fields and saving the new record in the local storage
 function saveNewRecord() {
     const rec = {
         rentalId: document.getElementById("rentalId").value.trim(),
@@ -170,6 +182,7 @@ function saveNewRecord() {
     loadRentalRecords();
 }
 
+// function to make changes in the existing record in the table by 
 function updateRecord(id) {
     const records = getRecords();
     const index = records.findIndex(r => r.rentalId === id);
@@ -181,8 +194,8 @@ function updateRecord(id) {
     records[index].startDate = document.getElementById("startDate").value;
     records[index].endDate = document.getElementById("endDate").value;
     records[index].customer = document.getElementById("customer").value.trim();
-    records[index].destination = document.getElementById("destination").value.trim();
     records[index].startPlace = document.getElementById("startPlace").value.trim();
+    records[index].destination = document.getElementById("destination").value.trim();
     records[index].singlePassenger = document.getElementById("singlePassenger").checked;
   
     saveRecords(records);
@@ -190,15 +203,18 @@ function updateRecord(id) {
     loadRentalRecords();
   }
 
+//function to delete record from the table when getting conformation from the popup
 function delectRecord(id) {
     let records = getRecords();
     records = records.filter(r => r.rentalId !== id);
     saveRecords(records);
     closeModal();
+    // renderReservations();
     loadRentalRecords();
+    
 }
 
-// Search button function
+// function to search the record based on the rental id
 function searchRecord() {
     const searchId = document.getElementById("searchInput").value.trim().toLowerCase();
     const tableBody = document.getElementById("rentalTableBody");
@@ -232,6 +248,7 @@ function searchRecord() {
       tableBody.appendChild(row);
     });
 
+    //Making the text input field empty after search
     document.getElementById("searchInput").value = "";
   }
 

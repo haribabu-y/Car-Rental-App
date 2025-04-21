@@ -27,14 +27,14 @@ body {
     width: 350px;
     /* box-shadow: 0 8px 30px black; */
     text-align: center;
-    /* position: relative; */
+    position: relative;
     transform: translateY(-50px);
 }
 
 .avatar {
     width: 120px;
     height: 120px;
-    opacity: 0.5;
+    opacity: 0.7;
     border-radius: 50%;
     margin-bottom: 20px;
     object-fit: cover;
@@ -42,6 +42,8 @@ body {
     padding: 5px;
     border: 1px solid white;
     transform: translateY(25PX);
+    position: relative;
+    z-index: 2;
 }
 
 #formTitle {
@@ -120,6 +122,22 @@ body {
     color: red;
 }
 
+@media screen and (max-width: 350px) {
+    .container {
+        width: auto;
+    }
+    .label1 {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+        top: -5px;
+    }
+
+}
+
 /* Styling for Home page */
 
 header {
@@ -173,7 +191,6 @@ header div a {
     header h1 {
         margin-bottom: 20px;
         font-size: x-large;
-        /* margin-left: 0; */
     }
  
     header nav {
@@ -264,9 +281,8 @@ nav a {
 
 .status-card {
     position: absolute;
-    /* width: 40%; */
     height: auto;
-    font-size: clamp(12px, 1.5vw, 18px);
+    /* font-size: clamp(12px, 1.5vw, 18px); */
     top: -15%;
     left: 100%;
     transform: translate(-50%, -50%);
@@ -312,12 +328,9 @@ nav a {
 
 .hero-buttons {
     margin-top: 150px;
-    /* display: flex;
-    flex-wrap: wrap;
-    gap: 15px; */
     display: grid;
     grid-template-columns: repeat(2, auto);
-    gap: 10px 10px;
+    gap: 15px;
     justify-content: flex-end;
     /* transform: translateY(150px); */
 }
@@ -349,7 +362,7 @@ nav a {
     justify-content: space-around;
     padding: 20px;
     background: white;
-    border: none;;
+    border: none;
     box-shadow: 0 8px 24px rgba(0,0,0, 0.2);
 }
 
@@ -369,7 +382,7 @@ nav a {
         margin: 20px 0;
     }
     .hero-right {
-        margin-top: 200px;
+        margin-top: 20px;
         text-align: center;
     }
     .hero-buttons {
@@ -381,11 +394,18 @@ nav a {
     .learn-link {
         text-align: center;
     }
+    .hero-center {
+        display: flex;
+        flex-direction: column;
+        margin-top: 130px;
+    }
     .status-card {
         display: block;
         font-size: medium;
         left: 50%;
-        top: 150%;
+        top: -100px;
+        /* left: 50%;
+        top: 150%; */
     }
     .hero-center img {
         max-width: 100%;
@@ -410,15 +430,9 @@ nav a {
     /* grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); */
 
     grid-template-columns: 1fr 1fr 1fr;
-    /* flex-wrap: wrap; */
-    /**/
+    flex-wrap: wrap;
     gap: 20px;
 }
-/* @media screen and (max-width: 1150px) {
-    .cars {
-    grid-template-columns: auto auto auto;
-    }
-} */
 @media screen and (max-width: 900px) {
     .cars {
     grid-template-columns: 1fr 1fr;
@@ -522,7 +536,7 @@ nav a {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    margin: 20px 0; /* adds space below the toolbar */
+    margin: 20px 0;
     flex-wrap: wrap;
 }
   
@@ -544,6 +558,7 @@ nav a {
 }
 #rentalTable {
     width: 100%;
+    height: 100%;
     display: table;
     text-align: center;
     border-collapse: collapse;
@@ -556,7 +571,7 @@ nav a {
 }
 
 #rentalTableBody td {
-    min-width: 130px;
+    min-width: 120px;
 }
 
 #rentalTableBody td:last-child  {
@@ -688,6 +703,16 @@ nav a {
     padding: 10px;
 }
 
+@media screen and (max-width: 780px) {
+    .modal-box {
+        max-height: 90%;
+        overflow: auto;
+    }
+    .modal-box label {
+        width: 60%;
+    }
+}
+
 /* Styling the reservation page */
 
 .reservation-page h2 {
@@ -743,7 +768,7 @@ nav a {
     bottom: 15px;
     right: 15px;
     padding: 6px 10px;
-    background-color: #d32f2f;
+    background-color: rgb(201, 60, 60);
     color: white;
     border: none;
     border-radius: 6px;
