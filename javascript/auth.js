@@ -11,9 +11,11 @@ function registerUser() {
         // if not match throwing an error message
         msg.textContent = "Password do not match!";
         // console.log("Password and confirm password are not matching");
+
         // reseting the password fields
         document.getElementById("regPassword").value = "";
         document.getElementById("regConfirmPassword").value = "";
+
         return false;
     }
 
@@ -45,14 +47,14 @@ function registerUser() {
 
     msg.style.color = "green";
     msg.textContent = "Registration Successful!";
-
-    window.location.href = "index.html";
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 2000);
 
     //Clearing form fields 
     document.getElementById("registerForm").reset();
 
     return false; 
-
 }
 
 function loginUser() {
@@ -62,8 +64,13 @@ function loginUser() {
     const msg = document.getElementById("message");
 
     if(username === "Admin" && password === "Admin") {
+        msg.style.color = "green";
+        msg.textContent = "Login successfull!";
         localStorage.setItem("loggedInUser", username);
-        window.location.href = "home.html";
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 2000)
+        document.getElementById("loginForm").reset();
         return false;
     }
 
@@ -75,19 +82,23 @@ function loginUser() {
     // finding the user if exists with email or username and password
     const user = users.find(user => ((user.username === username || user.email === email) && user.password === password));
 
+    // Getting username if user login through email id
+    let index = users.findIndex((res) => res.password === password);
+    let loggedusername = users[index].username;
+    // console.log(loggedusername);
+
     // if user exists printing message as "login successfull" and storing the loggedUser info and redirecting to dashboard
     if(user) {
         msg.style.color = "green";
         msg.textContent = "Login successfull!";
-
         // storing the logged user info in local storage
-        localStorage.setItem("loggedInUser", username);
+        localStorage.setItem("loggedInUser", loggedusername);
 
         // redirecring to the home page or dashboard
         setTimeout(() => {
             window.location.href = "home.html";
-        }, 1000);
-        
+        }, 2000);
+
     } else {
         msg.textContent = "Invalid username or password";
     }

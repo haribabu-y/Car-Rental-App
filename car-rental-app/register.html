@@ -15,22 +15,22 @@
             <form id="registerForm" onsubmit="return registerUser()">
                 <div class="input-group">
                     <i class="icon fa-solid fa-user"></i>
-                    <input class="field" type="text" id="regUsername" placeholder="Username" required />
+                    <input class="field" type="text" id="regUsername" placeholder="Username" pattern="^[a-zA-z\s]{1,50}$" title="Enter name in the formate 'Y Hari Babu'" required />
                 </div>
 
                 <div class="input-group">
                     <i class="icon fa-solid fa-envelope"></i>
-                    <input class="field" type="email" id="regEmail" placeholder="E-mail" required />
+                    <input class="field" type="email" id="regEmail" placeholder="E-mail" pattern="^[a-zA-z0-9]+@[a-zA-z]+.[a-zA-z]{2,}$" title="Enter E-mail in the formate 'haribabu12@gmail.com'" required />
                 </div>
 
                 <div class="input-group">
                     <i class="icon fa-solid fa-lock"></i>
-                    <input class="field" type="password" id="regPassword" placeholder="Password" required  />
+                    <input class="field" type="password" id="regPassword" placeholder="Password" pattern=".{4,}" title="Password length Atleast 4 characters" required  />
                 </div>
 
                 <div class="input-group">
                     <i class="icon fa-solid fa-lock"></i>
-                    <input class="field" type="password" id="regConfirmPassword" placeholder="Confirm Password" required />
+                    <input class="field" type="password" id="regConfirmPassword" placeholder="Confirm Password" title="It should match the above password." required />
                 </div>
 
                 <button id="formbtn" type="submit">SIGN UP</button>

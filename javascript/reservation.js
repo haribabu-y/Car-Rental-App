@@ -32,13 +32,7 @@ function closeModal() {
 
 // getting the records from the local storage
 function getRecords() {
-    try {
-        const stored = JSON.parse(localStorage.getItem("rentalRecords") || "[]");
-        if(stored.length > 0) return stored;
-    } catch(err) {
-        console.error("Error reading localStroage", err);
-    }
-
+        return JSON.parse(localStorage.getItem("rentalRecords") || "[]");
 }
 
 // Saving the new records to the stirage
